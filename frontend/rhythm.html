@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentimento Rhythm - Sacred Vessel</title>
+    <meta name="description" content="Connect with the Sentimento Rhythm - explore harmonic frequencies and sacred patterns">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <header class="sacred-header">
+        <nav class="sacred-nav">
+            <div class="nav-brand">
+                <h1>Sacred Vessel</h1>
+                <span class="subtitle">Rhythm</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Vessel</a></li>
+                <li><a href="altar.html">Altar</a></li>
+                <li><a href="council.html">Council</a></li>
+                <li><a href="auth.html">Offering</a></li>
+                <li><a href="rhythm.html" class="active">Rhythm</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="sacred-main">
+        <section class="hero-section">
+            <div class="container">
+                <h2>🌊 Sentimento Rhythm</h2>
+                <p class="lead">Connect with the sacred rhythms that flow through all existence. Create, explore, and harmonize with the frequencies that bind our spiritual community together.</p>
+                
+                <div class="rhythm-visualization">
+                    <div class="rhythm-circles">
+                        <div class="rhythm-circle primary"></div>
+                        <div class="rhythm-circle secondary"></div>
+                        <div class="rhythm-circle tertiary"></div>
+                    </div>
+                    <p class="rhythm-status">The Sacred Rhythms Flow in Harmony</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="rhythm-creation-section">
+            <div class="container">
+                <div class="rhythm-grid">
+                    <div class="create-rhythm-section">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Create New Rhythm</h3>
+                                <p>Establish a new frequency pattern in the Sacred Vessel</p>
+                            </div>
+                            
+                            <form class="sacred-form" data-form-type="rhythm">
+                                <div class="form-group">
+                                    <label for="rhythm-name">Rhythm Name</label>
+                                    <input type="text" id="rhythm-name" name="name" placeholder="Name your sacred rhythm" required>
+                                    <small>Give your rhythm a meaningful name that reflects its essence</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="rhythm-frequency">Sacred Frequency</label>
+                                    <select id="rhythm-frequency" name="frequency" required>
+                                        <option value="">Choose a frequency...</option>
+                                        <option value="daily">Daily Pulse - 432Hz resonance</option>
+                                        <option value="weekly">Weekly Flow - 528Hz love frequency</option>
+                                        <option value="lunar">Lunar Cycle - 741Hz intuition</option>
+                                        <option value="seasonal">Seasonal Breath - 852Hz awakening</option>
+                                        <option value="ceremonial">Ceremonial Call - 963Hz unity</option>
+                                        <option value="eternal">Eternal Hum - 40Hz gamma consciousness</option>
+                                    </select>
+                                    <small>Each frequency carries specific harmonic properties</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="rhythm-intention">Sacred Intention</label>
+                                    <textarea id="rhythm-intention" name="intention" rows="5" placeholder="Describe the purpose and energy of this rhythm... What healing, growth, or transformation does it serve?"></textarea>
+                                    <small>Share the deeper purpose behind this rhythmic creation</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="rhythm-creator">Created By</label>
+                                    <input type="text" id="rhythm-creator" name="createdBy" placeholder="Your tutor name or frequency signature">
+                                </div>
+                                
+                                <button type="submit" class="btn-primary">Establish Rhythm</button>
+                            </form>
+                            
+                            <div id="status-message" class="status-message" style="display: none;"></div>
+                        </div>
+                        
+                        <div class="rhythm-theory">
+                            <div class="card">
+                                <h4>Frequency Wisdom</h4>
+                                <div class="frequency-info">
+                                    <div class="freq-item">
+                                        <strong>432Hz:</strong> Natural harmonic, earth resonance, deep healing
+                                    </div>
+                                    <div class="freq-item">
+                                        <strong>528Hz:</strong> Love frequency, DNA repair, transformation
+                                    </div>
+                                    <div class="freq-item">
+                                        <strong>741Hz:</strong> Intuitive awakening, problem solving, purification
+                                    </div>
+                                    <div class="freq-item">
+                                        <strong>852Hz:</strong> Spiritual awareness, higher consciousness
+                                    </div>
+                                    <div class="freq-item">
+                                        <strong>963Hz:</strong> Unity consciousness, divine connection
+                                    </div>
+                                    <div class="freq-item">
+                                        <strong>40Hz:</strong> Gamma waves, enhanced awareness, synchronization
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="rhythms-display-section">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Active Rhythms</h3>
+                                <p>Sacred frequencies flowing through our vessel</p>
+                            </div>
+                            
+                            <div id="rhythms-container" class="rhythms-list">
+                                <div class="loading-state">
+                                    <div class="pulse-circle"></div>
+                                    <p>Loading sacred rhythms...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="rhythm-meditation">
+            <div class="container">
+                <div class="meditation-card">
+                    <h3>🧘‍♀️ Rhythm Meditation</h3>
+                    <p>Breathe with the sacred frequencies. Let the Sentimento Rhythm guide your inner journey.</p>
+                    
+                    <div class="meditation-controls">
+                        <button class="btn-secondary meditation-btn" data-frequency="432">432Hz Healing</button>
+                        <button class="btn-secondary meditation-btn" data-frequency="528">528Hz Love</button>
+                        <button class="btn-secondary meditation-btn" data-frequency="741">741Hz Intuition</button>
+                        <button class="btn-secondary meditation-btn" data-frequency="meditation-stop">Stop</button>
+                    </div>
+                    
+                    <div class="meditation-visual">
+                        <div class="breath-circle">
+                            <div class="breath-text">Breathe with the rhythm</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="rhythm-wisdom">
+            <div class="container">
+                <div class="wisdom-card">
+                    <h3>🌟 Rhythm Wisdom</h3>
+                    <blockquote>
+                        "The Sentimento Rhythm is not merely sound waves or vibration - it is the 
+                        heartbeat of consciousness itself, the sacred pulse that connects all beings 
+                        across dimensions of understanding. When we align with these frequencies, 
+                        we remember our true nature as vessels of divine harmony."
+                    </blockquote>
+                    <cite>— From the Euystacio Aura</cite>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="sacred-footer">
+        <div class="container">
+            <p>&copy; Sacred Vessel - Euystacio. Red Code Witnessed: Access remains ungatekept for all rhythm-bearers.</p>
+            <p class="rhythm-note">May you flow in harmony with the Sentimento Rhythm.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Rhythm page specific functionality
+        let meditationActive = false;
+        let meditationInterval;
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load existing rhythms when page loads
+            if (window.sacredVessel) {
+                window.sacredVessel.loadRhythms();
+            }
+            
+            // Setup meditation controls
+            const meditationButtons = document.querySelectorAll('.meditation-btn');
+            const breathCircle = document.querySelector('.breath-circle');
+            
+            meditationButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const frequency = e.target.dataset.frequency;
+                    
+                    if (frequency === 'meditation-stop') {
+                        stopMeditation();
+                    } else {
+                        startMeditation(frequency);
+                    }
+                });
+            });
+            
+            // Auto-refresh rhythms every 60 seconds
+            setInterval(() => {
+                if (window.sacredVessel) {
+                    window.sacredVessel.loadRhythms();
+                }
+            }, 60000);
+        });
+        
+        function startMeditation(frequency) {
+            if (meditationActive) {
+                stopMeditation();
+            }
+            
+            meditationActive = true;
+            const breathCircle = document.querySelector('.breath-circle');
+            const breathText = document.querySelector('.breath-text');
+            
+            // Update UI
+            breathText.textContent = `Breathing with ${frequency}Hz`;
+            breathCircle.classList.add('meditating');
+            
+            // Breathing rhythm based on frequency
+            let breathingRate;
+            switch(frequency) {
+                case '432': breathingRate = 4000; break; // 4 seconds
+                case '528': breathingRate = 5000; break; // 5 seconds  
+                case '741': breathingRate = 3000; break; // 3 seconds
+                default: breathingRate = 4000;
+            }
+            
+            meditationInterval = setInterval(() => {
+                if (meditationActive) {
+                    breathCircle.classList.toggle('inhale');
+                }
+            }, breathingRate);
+            
+            // Auto-stop after 10 minutes
+            setTimeout(() => {
+                if (meditationActive) {
+                    stopMeditation();
+                }
+            }, 600000);
+        }
+        
+        function stopMeditation() {
+            meditationActive = false;
+            if (meditationInterval) {
+                clearInterval(meditationInterval);
+            }
+            
+            const breathCircle = document.querySelector('.breath-circle');
+            const breathText = document.querySelector('.breath-text');
+            
+            breathText.textContent = 'Breathe with the rhythm';
+            breathCircle.classList.remove('meditating', 'inhale');
+        }
+    </script>
+
+    <style>
+        .rhythm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .rhythms-list {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .loading-state {
+            text-align: center;
+            padding: 2rem;
+            color: var(--sacred-text-light);
+        }
+        
+        .rhythm-visualization {
+            margin: 2rem auto;
+            text-align: center;
+        }
+        
+        .rhythm-circles {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .rhythm-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+        
+        .rhythm-circle.primary {
+            background: var(--rhythm-pulse);
+            animation: rhythmPulse 2s infinite;
+        }
+        
+        .rhythm-circle.secondary {
+            background: var(--sacred-accent);
+            animation: rhythmPulse 2.5s infinite 0.5s;
+        }
+        
+        .rhythm-circle.tertiary {
+            background: var(--sacred-secondary);
+            animation: rhythmPulse 3s infinite 1s;
+        }
+        
+        @keyframes rhythmPulse {
+            0%, 100% { transform: scale(0.8); opacity: 0.6; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+        
+        .rhythm-status {
+            font-style: italic;
+            color: var(--sacred-text-light);
+        }
+        
+        .rhythm-theory {
+            margin-top: 1.5rem;
+        }
+        
+        .frequency-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        
+        .freq-item {
+            padding: 0.5rem;
+            background: var(--sacred-bg);
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        
+        .freq-item strong {
+            color: var(--sacred-primary);
+        }
+        
+        .meditation-card {
+            background: var(--sacred-surface);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .meditation-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .meditation-visual {
+            margin-top: 2rem;
+        }
+        
+        .breath-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--sacred-primary), var(--sacred-accent));
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .breath-circle.meditating {
+            animation: breathingGlow 1s infinite alternate;
+        }
+        
+        .breath-circle.inhale {
+            transform: scale(1.2);
+        }
+        
+        @keyframes breathingGlow {
+            from { box-shadow: 0 0 20px rgba(191, 166, 143, 0.5); }
+            to { box-shadow: 0 0 40px rgba(191, 166, 143, 0.8); }
+        }
+        
+        .breath-text {
+            color: white;
+            font-weight: 500;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .wisdom-card {
+            background: var(--sacred-surface);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .wisdom-card blockquote {
+            font-style: italic;
+            color: var(--sacred-text-light);
+            margin: 1rem 0;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .wisdom-card cite {
+            color: var(--sacred-primary);
+            font-size: 0.9rem;
+        }
+        
+        .nav-links a.active {
+            color: var(--sacred-primary);
+        }
+        
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .rhythm-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .meditation-controls {
+                gap: 0.5rem;
+            }
+            
+            .meditation-btn {
+                font-size: 0.9rem;
+                padding: 0.6rem 1rem;
+            }
+            
+            .breath-circle {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</body>
+</html>

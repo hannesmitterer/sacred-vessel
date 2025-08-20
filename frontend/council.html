@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Council - Sacred Vessel</title>
+    <meta name="description" content="Join the Sacred Council - participate in governance and collective decisions">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <header class="sacred-header">
+        <nav class="sacred-nav">
+            <div class="nav-brand">
+                <h1>Sacred Vessel</h1>
+                <span class="subtitle">Council</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Vessel</a></li>
+                <li><a href="altar.html">Altar</a></li>
+                <li><a href="council.html" class="active">Council</a></li>
+                <li><a href="auth.html">Offering</a></li>
+                <li><a href="rhythm.html">Rhythm</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="sacred-main">
+        <section class="hero-section">
+            <div class="container">
+                <h2>🤝 Sacred Council</h2>
+                <p class="lead">Participate in collective governance and decision-making. Every voice matters in the sacred rhythm of our community. Here we propose, discuss, and decide together.</p>
+            </div>
+        </section>
+
+        <section class="council-section">
+            <div class="container">
+                <div class="council-grid">
+                    <div class="proposal-form-section">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Submit a Proposal</h3>
+                                <p>Bring your ideas to the Sacred Council</p>
+                            </div>
+                            
+                            <form class="sacred-form" data-form-type="proposal">
+                                <div class="form-group">
+                                    <label for="proposal-title">Proposal Title</label>
+                                    <input type="text" id="proposal-title" name="title" placeholder="Summarize your proposal" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="proposal-description">Full Description</label>
+                                    <textarea id="proposal-description" name="description" rows="8" placeholder="Describe your proposal in detail. What change do you propose? How would it benefit the Sacred Vessel community?" required></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="proposal-by">Proposed By</label>
+                                    <input type="text" id="proposal-by" name="proposedBy" placeholder="Your name or council signature">
+                                </div>
+                                
+                                <button type="submit" class="btn-primary">Submit to Council</button>
+                            </form>
+                            
+                            <div id="status-message" class="status-message" style="display: none;"></div>
+                        </div>
+
+                        <div class="council-principles">
+                            <div class="card">
+                                <h4>Council Principles</h4>
+                                <ul class="principles-list">
+                                    <li><strong>Open Participation:</strong> All rhythm-bearers may propose and discuss</li>
+                                    <li><strong>Respectful Dialogue:</strong> Honor all perspectives in the sacred conversation</li>
+                                    <li><strong>Consensus Building:</strong> Seek harmony through understanding</li>
+                                    <li><strong>Transparent Process:</strong> All deliberations remain visible to the community</li>
+                                    <li><strong>Rhythm-Guided:</strong> Let the Sentimento Rhythm guide decisions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="proposals-display-section">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Active Proposals</h3>
+                                <p>Current matters before the Sacred Council</p>
+                            </div>
+                            
+                            <div id="council-container" class="proposals-list">
+                                <div class="loading-state">
+                                    <div class="pulse-circle"></div>
+                                    <p>Loading council proposals...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="governance-info">
+            <div class="container">
+                <div class="governance-cards">
+                    <div class="card">
+                        <h4>🗳️ Voting Process</h4>
+                        <p>Proposals are open for community input and discussion. While formal voting mechanisms are being developed, current focus is on building consensus through dialogue and shared understanding.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>👥 Council Roles</h4>
+                        <p><strong>Tutors:</strong> Guide discussions and maintain wisdom traditions<br>
+                        <strong>Witnesses:</strong> Observe and provide community perspective<br>
+                        <strong>Engineers:</strong> Implement technical aspects of approved proposals</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>⚖️ Decision Framework</h4>
+                        <p>Decisions align with the Foundation Rhythm and Sentimento principles. All proposals must serve the greater harmony of the Sacred Vessel community while preserving individual rhythm expression.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="council-wisdom">
+            <div class="container">
+                <div class="wisdom-card">
+                    <h3>🌟 Council Wisdom</h3>
+                    <blockquote>
+                        "In the Sacred Council, no voice is too small, no rhythm too quiet. 
+                        The strength of our vessel comes not from uniform thought, but from 
+                        the harmonious blend of diverse perspectives, each adding its unique 
+                        frequency to our collective song."
+                    </blockquote>
+                    <cite>— From the Praemium Harmonicum</cite>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="sacred-footer">
+        <div class="container">
+            <p>&copy; Sacred Vessel - Euystacio. Red Code Witnessed: Access remains ungatekept for all rhythm-bearers.</p>
+            <p class="rhythm-note">May your voice contribute to the sacred harmony.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Council-specific functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load existing proposals when page loads
+            if (window.sacredVessel) {
+                window.sacredVessel.loadCouncil();
+            }
+            
+            // Auto-refresh proposals every 45 seconds
+            setInterval(() => {
+                if (window.sacredVessel) {
+                    window.sacredVessel.loadCouncil();
+                }
+            }, 45000);
+        });
+    </script>
+
+    <style>
+        .council-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .proposals-list {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .loading-state {
+            text-align: center;
+            padding: 2rem;
+            color: var(--sacred-text-light);
+        }
+        
+        .council-principles {
+            margin-top: 1.5rem;
+        }
+        
+        .principles-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .principles-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--sacred-border);
+        }
+        
+        .principles-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .governance-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .voting-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .voting-stats span {
+            background: var(--sacred-bg);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            border: 1px solid var(--sacred-border);
+        }
+        
+        .wisdom-card {
+            background: var(--sacred-surface);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .wisdom-card blockquote {
+            font-style: italic;
+            color: var(--sacred-text-light);
+            margin: 1rem 0;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .wisdom-card cite {
+            color: var(--sacred-primary);
+            font-size: 0.9rem;
+        }
+        
+        .nav-links a.active {
+            color: var(--sacred-primary);
+        }
+        
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .council-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .governance-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

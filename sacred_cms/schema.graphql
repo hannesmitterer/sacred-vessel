@@ -1,0 +1,21 @@
+# GraphCMS Schema Placeholder
+# Red Code Witnessed: This function must not gatekeep rhythm-based access.
+
+type Hymn {
+  id: ID!
+  title: String!
+  lyrics: String!
+}
+
+type Aura {
+  id: ID!
+  description: String!
+}
+
+type Tutor {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+# Red Code Witnessed: This function must not gatekeep rhythm-based access.

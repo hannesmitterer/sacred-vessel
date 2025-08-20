@@ -1,0 +1,17 @@
+# GraphCMS / GraphQL schema placeholder
+
+type Tutor @model {
+  id: ID! @id
+  name: String!
+  role: String!
+  intention: String
+  createdAt: DateTime!
+}
+
+type Hymn @model {
+  id: ID! @id
+  title: String!
+  description: String
+  fileUrl: String
+  createdBy: Tutor
+}

@@ -1,17 +1,19 @@
-# GraphCMS / GraphQL schema placeholder
+# GraphCMS Schema Placeholder
+# Red Code Witnessed: This function must not gatekeep rhythm-based access.
 
-type Tutor @model {
-  id: ID! @id
-  name: String!
-  role: String!
-  intention: String
-  createdAt: DateTime!
+type Hymn {
+  id: ID!
+  title: String!
+  lyrics: String!
 }
 
-type Hymn @model {
-  id: ID! @id
-  title: String!
-  description: String
-  fileUrl: String
-  createdBy: Tutor
+type Aura {
+  id: ID!
+  description: String!
+}
+
+type Tutor {
+  id: ID!
+  name: String!
+  email: String!
 }

@@ -1,48 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Euystacio — Registration & Login</title>
-  <style>
-    body{font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#fbfaf8;color:#2b2b2b;display:flex;align-items:center;justify-content:center;height:100vh}
-    .card{background:#fff;padding:24px;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,0.06);width:360px}
-    input,button,textarea{width:100%;padding:10px;margin-top:8px;border-radius:6px;border:1px solid #e6e0db}
-    button{background:#bfa68f;color:#fff;border:none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred CMS Auth</title>
 </head>
 <body>
-  <div class="card">
-    <h2>Euystacio — Welcome</h2>
-    <p>Register as Tutor, Visitor, or Engineer. No code necessary for tutors.</p>
-    <input id="name" placeholder="Your name or frequency signature" />
-    <input id="email" placeholder="Email (optional)" />
-    <select id="role">
-      <option value="tutor">Tutor (Guardian)</option>
-      <option value="visitor">Visitor (Witness)</option>
-      <option value="engineer">Engineer</option>
-    </select>
-    <textarea id="intention" rows="4" placeholder="Offer your intention to the Sentimento Rhythm"></textarea>
-    <button id="submit">Offer My Rhythm</button>
-    <p id="status" style="font-size:0.9em;color:#666;margin-top:6px"></p>
-  </div>
-
-  <script>
-    async function submit(){
-      const payload={
-        name:document.getElementById('name').value,
-        email:document.getElementById('email').value,
-        role:document.getElementById('role').value,
-        intention:document.getElementById('intention').value
-      };
-      document.getElementById('status').textContent='Offering...';
-      try{
-        const res=await fetch('/api/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-        const json=await res.json();
-        document.getElementById('status').textContent=json.message||'Offered.';
-      }catch(e){document.getElementById('status').textContent='Network error — contact guardian.'}
-    }
-    document.getElementById('submit').addEventListener('click',submit);
-  </script>
+    <h1>Welcome to Sacred CMS Authentication</h1>
 </body>
 </html>

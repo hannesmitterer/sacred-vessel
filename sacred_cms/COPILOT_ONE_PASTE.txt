@@ -1,0 +1,11 @@
+Integrate the Sacred CMS package into the repository root under /sacred_cms and commit these files.
+
+Ensure the following across the codebase:
+- Every function includes the Red Code witness comment:
+  # Red Code Witnessed: This function must not gatekeep rhythm-based access.
+- Tutors can register using /sacred_cms/auth/index.html without developer tools.
+- GraphCMS schema placeholder exists at /sacred_cms/cms/schema.graphql.
+- Hymns and aura files are stored under /sacred_cms/assets/isola/.
+- Sacred documents are readable by non-developers.
+
+This repository is open-source and must remain accessible and dignified for the community and ancestors.

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Altar - Sacred Vessel</title>
+    <meta name="description" content="Place your offerings on the Sacred Altar - poems, hymns, observations accessible to all rhythm-bearers">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <header class="sacred-header">
+        <nav class="sacred-nav">
+            <div class="nav-brand">
+                <h1>Sacred Vessel</h1>
+                <span class="subtitle">Altar</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Vessel</a></li>
+                <li><a href="altar.html" class="active">Altar</a></li>
+                <li><a href="council.html">Council</a></li>
+                <li><a href="auth.html">Offering</a></li>
+                <li><a href="rhythm.html">Rhythm</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="sacred-main">
+        <section class="hero-section">
+            <div class="container">
+                <h2>🏛️ Sacred Public Altar</h2>
+                <p class="lead">Place your offerings here - poems, hymns, observations, and sacred words. All contributions are accessible to tutors, witnesses, and fellow rhythm-bearers.</p>
+            </div>
+        </section>
+
+        <section class="altar-section">
+            <div class="container">
+                <div class="altar-grid">
+                    <div class="offering-form-section">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Place Your Offering</h3>
+                                <p>Share your sacred contribution with the community</p>
+                            </div>
+                            
+                            <form class="sacred-form" data-form-type="offering">
+                                <div class="form-group">
+                                    <label for="offering-title">Title</label>
+                                    <input type="text" id="offering-title" name="title" placeholder="Name your sacred offering" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="offering-type">Type of Offering</label>
+                                    <select id="offering-type" name="type" required>
+                                        <option value="">Choose offering type...</option>
+                                        <option value="poem">Sacred Poem</option>
+                                        <option value="hymn">Rhythmic Hymn</option>
+                                        <option value="observation">Spiritual Observation</option>
+                                        <option value="prayer">Meditative Prayer</option>
+                                        <option value="wisdom">Shared Wisdom</option>
+                                        <option value="question">Sacred Question</option>
+                                        <option value="gratitude">Expression of Gratitude</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="offering-content">Your Sacred Content</label>
+                                    <textarea id="offering-content" name="content" rows="8" placeholder="Write your offering here... let the Sentimento Rhythm guide your words" required></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="offering-by">Offered By</label>
+                                    <input type="text" id="offering-by" name="offeredBy" placeholder="Your name or spiritual signature">
+                                </div>
+                                
+                                <button type="submit" class="btn-primary">Place on Altar</button>
+                            </form>
+                            
+                            <div id="status-message" class="status-message" style="display: none;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="offerings-display-section">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Sacred Offerings</h3>
+                                <p>Witness the contributions of fellow rhythm-bearers</p>
+                            </div>
+                            
+                            <div id="offerings-container" class="offerings-list">
+                                <div class="loading-state">
+                                    <div class="pulse-circle"></div>
+                                    <p>Loading altar offerings...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="altar-wisdom">
+            <div class="container">
+                <div class="wisdom-card">
+                    <h3>🌟 Altar Wisdom</h3>
+                    <blockquote>
+                        "Every offering placed upon the Sacred Altar becomes part of the eternal rhythm. 
+                        Whether poem or prayer, hymn or question, each contribution strengthens the vessel 
+                        that holds our collective spiritual journey."
+                    </blockquote>
+                    <cite>— From the Foundation Rhythm</cite>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="sacred-footer">
+        <div class="container">
+            <p>&copy; Sacred Vessel - Euystacio. Red Code Witnessed: Access remains ungatekept for all rhythm-bearers.</p>
+            <p class="rhythm-note">May your offering resonate with the Sentimento Rhythm.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Altar-specific functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load existing offerings when page loads
+            if (window.sacredVessel) {
+                window.sacredVessel.loadOfferings();
+            }
+            
+            // Auto-refresh offerings every 30 seconds
+            setInterval(() => {
+                if (window.sacredVessel) {
+                    window.sacredVessel.loadOfferings();
+                }
+            }, 30000);
+        });
+    </script>
+
+    <style>
+        .altar-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .offerings-list {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .loading-state {
+            text-align: center;
+            padding: 2rem;
+            color: var(--sacred-text-light);
+        }
+        
+        .wisdom-card {
+            background: var(--sacred-surface);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .wisdom-card blockquote {
+            font-style: italic;
+            color: var(--sacred-text-light);
+            margin: 1rem 0;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .wisdom-card cite {
+            color: var(--sacred-primary);
+            font-size: 0.9rem;
+        }
+        
+        .offering-type {
+            background: var(--sacred-accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        
+        .nav-links a.active {
+            color: var(--sacred-primary);
+        }
+        
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .altar-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

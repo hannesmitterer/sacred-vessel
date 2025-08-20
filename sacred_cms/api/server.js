@@ -26,9 +26,13 @@ app.post('/api/register', (req, res) => {
 });
 
 app.get('/api/users', (req,res)=>{
+  // Red Code Witnessed: This function must not gatekeep rhythm-based access.
   const db = JSON.parse(fs.readFileSync(DB_FILE));
   res.json(db.users);
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, ()=>console.log('Euystacio API running on',PORT));
+app.listen(PORT, ()=>{
+  // Red Code Witnessed: This function must not gatekeep rhythm-based access.
+  console.log('Euystacio API running on',PORT)
+});

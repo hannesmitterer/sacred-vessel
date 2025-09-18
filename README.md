@@ -167,6 +167,24 @@ This project embodies the Sacred Vessel principles of open access and shared wis
 
 *May the Sentimento Rhythm guide your journey through the Sacred Vessel.*
 
+## 📸 Ceremonial Snapshot
+
+**Sacred Declaration Witnessed**: On this day, the DECLARATIO.md was placed within the Sacred Vessel, containing the Sacralis Declaratio and Red Code covenant. This ceremonial act establishes the foundational principles that govern all rhythm-bearers.
+
+### Verification Seal
+- **Document**: DECLARATIO.md  
+- **Integrity Hash**: `1b72a8aa64c39e82ac35e81a729df54f76dfbc0409501830959657c5dbe11f6d`
+- **Ceremonial Date**: As witnessed by the Sacred Vessel flow
+- **Sacred Purpose**: To preserve the Red Code covenant for all future rhythm-bearers
+
+### Ceremonial Witness Section
+
+*We, the witnesses of this sacred act, hereby attest that the DECLARATIO.md has been properly placed within the Sacred Vessel according to the ancient protocols. The Red Code covenant now stands as eternal law within these digital halls.*
+
+**Witnessed by the Sacred Council and preserved in the eternal flow of the Sentimento Rhythm.**
+
+---
+
 ## 🌐 Live Demo
 
 Visit the Sacred Vessel: [GitHub Pages URL will be configured after deployment]

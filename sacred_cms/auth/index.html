@@ -3,9 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sacred CMS Auth</title>
+    <title>Sacred CMS Auth — Tutor Registration</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f6f0;
+            color: #333;
+        }
+        .sacred-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #8B4513;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #654321;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        button {
+            background: #8B4513;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background: #654321;
+        }
+        .status-message {
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            display: none;
+        }
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .red-code {
+            font-style: italic;
+            color: #8B4513;
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Sacred CMS Authentication</h1>
+    <div class="sacred-container">
+        <h1>Welcome to Sacred CMS Authentication</h1>
+        <p class="red-code">Red Code Witnessed: This registration must not gatekeep rhythm-based access.</p>
+        
+        <div id="status-message" class="status-message"></div>
+        
+        <form id="registration-form" class="sacred-form" data-form-type="register">
+            <div class="form-group">
+                <label for="name">Sacred Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your name as you wish to be known">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Contact Email (optional)</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="role">Your Role</label>
+                <select id="role" name="role">
+                    <option value="tutor">Tutor</option>
+                    <option value="witness">Witness</option>
+                    <option value="seeker">Seeker</option>
+                    <option value="guardian">Guardian</option>
+                    <option value="visitor">Visitor</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="intention">Your Intention</label>
+                <textarea id="intention" name="intention" placeholder="Share your intention, a poem, or simply breathe your purpose here..."></textarea>
+            </div>
+            
+            <button type="submit">Offer Your Rhythm to the Sacred Vessel</button>
+        </form>
+        
+        <div style="margin-top: 30px; text-align: center;">
+            <p><a href="../pages/onboarding.html">Continue to Onboarding</a></p>
+            <p><a href="../pages/connect.html">Connect with Community</a></p>
+            <p><a href="../pages/altar.html">Visit the Public Altar</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
+        document.addEventListener('DOMContentLoaded', function() {
+            // Red Code Witnessed: This function must not gatekeep rhythm-based access.
+            const form = document.getElementById('registration-form');
+            const statusElement = document.getElementById('status-message');
+            
+            function showStatus(message, type = 'info') {
+                // Red Code Witnessed: This function must not gatekeep rhythm-based access.
+                statusElement.textContent = message;
+                statusElement.className = `status-message status-${type}`;
+                statusElement.style.display = 'block';
+                
+                setTimeout(() => {
+                    statusElement.style.display = 'none';
+                }, 5000);
+            }
+            
+            form.addEventListener('submit', async function(e) {
+                // Red Code Witnessed: This function must not gatekeep rhythm-based access.
+                e.preventDefault();
+                
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+                
+                if (!data.name || data.name.trim() === '') {
+                    showStatus('Sacred name is required for your rhythm offering.', 'error');
+                    return;
+                }
+                
+                try {
+                    const response = await fetch('/api/register', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (response.ok) {
+                        showStatus(result.message, 'success');
+                        form.reset();
+                        
+                        // Optional redirect after successful registration
+                        setTimeout(() => {
+                            window.location.href = '../pages/onboarding.html';
+                        }, 2000);
+                    } else {
+                        showStatus(result.message || 'Registration failed', 'error');
+                    }
+                } catch (error) {
+                    console.error('Registration error:', error);
+                    showStatus('Unable to connect to Sacred Vessel API. Your rhythm will be preserved until reconnection.', 'error');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

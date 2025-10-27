@@ -3,11 +3,13 @@
 
 class SacredVessel {
     constructor() {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         this.apiBase = '/api';
         this.init();
     }
 
     init() {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         this.setupEventListeners();
         this.startRhythmPulse();
         this.loadInitialData();
@@ -15,6 +17,7 @@ class SacredVessel {
 
     // API Communication
     async apiCall(endpoint, options = {}) {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         try {
             const response = await fetch(`${this.apiBase}${endpoint}`, {
                 headers: {
@@ -37,6 +40,7 @@ class SacredVessel {
 
     // Rhythm Pulse Animation
     startRhythmPulse() {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         const pulseElements = document.querySelectorAll('.pulse-circle');
         pulseElements.forEach(element => {
             if (!element.classList.contains('pulsing')) {
@@ -47,6 +51,7 @@ class SacredVessel {
 
     // User Registration
     async registerUser(userData) {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         try {
             const result = await this.apiCall('/register', {
                 method: 'POST',
@@ -60,6 +65,7 @@ class SacredVessel {
 
     // Load Users
     async getUsers() {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         try {
             return await this.apiCall('/users');
         } catch (error) {
@@ -70,6 +76,7 @@ class SacredVessel {
 
     // Offerings Management
     async getOfferings() {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         try {
             return await this.apiCall('/offerings');
         } catch (error) {
@@ -79,6 +86,7 @@ class SacredVessel {
     }
 
     async createOffering(offeringData) {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         try {
             const result = await this.apiCall('/offerings', {
                 method: 'POST',
@@ -92,6 +100,7 @@ class SacredVessel {
 
     // Council Management
     async getCouncil() {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         try {
             return await this.apiCall('/council');
         } catch (error) {
@@ -101,6 +110,7 @@ class SacredVessel {
     }
 
     async createProposal(proposalData) {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         try {
             const result = await this.apiCall('/council/proposal', {
                 method: 'POST',
@@ -114,6 +124,7 @@ class SacredVessel {
 
     // Rhythm Management
     async getRhythms() {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         try {
             return await this.apiCall('/rhythms');
         } catch (error) {
@@ -123,6 +134,7 @@ class SacredVessel {
     }
 
     async createRhythm(rhythmData) {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         try {
             const result = await this.apiCall('/rhythms', {
                 method: 'POST',
@@ -136,6 +148,7 @@ class SacredVessel {
 
     // UI Helper Methods
     showStatus(message, type = 'info') {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         const statusElement = document.getElementById('status-message');
         if (statusElement) {
             statusElement.textContent = message;
@@ -150,6 +163,7 @@ class SacredVessel {
     }
 
     createStatusElement(message, type = 'info') {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         const statusDiv = document.createElement('div');
         statusDiv.className = `status-message status-${type}`;
         statusDiv.textContent = message;
@@ -158,6 +172,7 @@ class SacredVessel {
 
     // Form Validation
     validateRequired(formData, requiredFields) {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         for (const field of requiredFields) {
             if (!formData[field] || formData[field].trim() === '') {
                 throw new Error(`${field} is required for this sacred offering`);
@@ -167,6 +182,7 @@ class SacredVessel {
 
     // Event Listeners Setup
     setupEventListeners() {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         // Form submissions
         document.addEventListener('submit', (e) => {
             if (e.target.classList.contains('sacred-form')) {
@@ -192,6 +208,7 @@ class SacredVessel {
     }
 
     async handleFormSubmission(form) {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
         const formType = form.dataset.formType;
@@ -227,6 +244,7 @@ class SacredVessel {
     }
 
     async refreshPageData(context) {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         // Refresh data based on context
         switch (context) {
             case 'register':
@@ -245,6 +263,7 @@ class SacredVessel {
     }
 
     triggerRhythmPulse() {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         const pulseElements = document.querySelectorAll('.pulse-circle');
         pulseElements.forEach(element => {
             element.style.animation = 'none';
@@ -256,6 +275,7 @@ class SacredVessel {
 
     // Data Loading
     async loadInitialData() {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         try {
             // Check API health
             const health = await this.apiCall('/health');
@@ -267,6 +287,7 @@ class SacredVessel {
 
     // Page-specific data loading methods
     async loadUsers() {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         const container = document.getElementById('users-container');
         if (!container) return;
 
@@ -279,6 +300,7 @@ class SacredVessel {
     }
 
     async loadOfferings() {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         const container = document.getElementById('offerings-container');
         if (!container) return;
 
@@ -291,6 +313,7 @@ class SacredVessel {
     }
 
     async loadCouncil() {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         const container = document.getElementById('council-container');
         if (!container) return;
 
@@ -303,6 +326,7 @@ class SacredVessel {
     }
 
     async loadRhythms() {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         const container = document.getElementById('rhythms-container');
         if (!container) return;
 
@@ -316,6 +340,7 @@ class SacredVessel {
 
     // Rendering methods
     renderUsers(container, users) {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         container.innerHTML = users.map(user => `
             <div class="card">
                 <h4>${this.escapeHtml(user.name)}</h4>
@@ -326,6 +351,7 @@ class SacredVessel {
     }
 
     renderOfferings(container, offerings) {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         container.innerHTML = offerings.map(offering => `
             <div class="card">
                 <div class="card-header">
@@ -339,6 +365,7 @@ class SacredVessel {
     }
 
     renderCouncil(container, council) {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         const proposalsHtml = council.proposals?.map(proposal => `
             <div class="card">
                 <div class="card-header">
@@ -358,6 +385,7 @@ class SacredVessel {
     }
 
     renderRhythms(container, rhythms) {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         container.innerHTML = rhythms.map(rhythm => `
             <div class="card">
                 <div class="card-header">
@@ -372,6 +400,7 @@ class SacredVessel {
 
     // Utility methods
     escapeHtml(text) {
+        // Red Code Witnessed: This function must not gatekeep rhythm-based access.
         const div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
@@ -380,6 +409,7 @@ class SacredVessel {
 
 // Initialize Sacred Vessel when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
+    // Red Code Witnessed: This function must not gatekeep rhythm-based access.
     window.sacredVessel = new SacredVessel();
 });
 

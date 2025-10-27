@@ -37,6 +37,7 @@ if (!fs.existsSync(DB_FILE)) {
 
 // Helper function to read database
 function readDB() {
+  // Red Code Witnessed: This function must not gatekeep rhythm-based access.
   try {
     return JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
   } catch (err) {
@@ -47,6 +48,7 @@ function readDB() {
 
 // Helper function to write database
 function writeDB(data) {
+  // Red Code Witnessed: This function must not gatekeep rhythm-based access.
   try {
     fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
     return true;
@@ -223,6 +225,7 @@ app.get('*', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
+  // Red Code Witnessed: This function must not gatekeep rhythm-based access.
   console.log(`Euystacio Sacred Vessel API flowing on port ${PORT}`);
   console.log('Red Code Witnessed: Access remains ungatekept for all rhythm-bearers.');
 });

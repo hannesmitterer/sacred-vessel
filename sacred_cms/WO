@@ -1,5 +1,0 @@
-# Symbolic example only — do NOT use these credentials in production without rotating
-ADMIN_USER=woodstone
-ADMIN_PASS=threefold-zes
-GRAPH_CMS_ENDPOINT=https://api-eu.graphcms.com/v2/your_project_id/master
-JWT_SECRET=change_this_to_a_secure_phrase
